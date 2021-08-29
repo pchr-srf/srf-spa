@@ -1,0 +1,30 @@
+.collection {
+    margin: 16px 0 40px;
+}
+
+.collection__title {
+    font-size: 20px;
+    margin: 0 0 16px;
+    text-align: left;
+}
+
+.collection__teaser-list {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    list-style-type: none;
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    .collection__teaser-list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.collection__teaser {
+    justify-self: stretch;
+    align-self: stretch;
+    display: flex;
+}
