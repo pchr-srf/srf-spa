@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "SRF-SPA",
+  "name": "Demo React app with SRF content",
   "icons": [
     {
       "src": "favicon.ico",
