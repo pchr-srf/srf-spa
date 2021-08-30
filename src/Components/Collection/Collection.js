@@ -6,6 +6,13 @@ const Collection = ({
   title,
   teasers = []
 }) => {
+
+  const usefulTeasers = teasers.filter(teaser => teaser.contentId && teaser.title);
+
+  // this SPA only renders some teasers, no special cases like static items
+  if (usefulTeasers.length === 0) {
+    return null;
+  }
   
   return (
     <div className='collection'>
@@ -13,7 +20,7 @@ const Collection = ({
         <h2 className='collection__title'>{title}</h2>
       )}
       <ul className='collection__teaser-list'>
-        {teasers.filter(teaser => teaser.contentId && teaser.title).map(teaser => (
+        {usefulTeasers.map(teaser => (
           <li className='collection__teaser' key={teaser.urn}>
             <Teaser
               id={teaser.contentId}

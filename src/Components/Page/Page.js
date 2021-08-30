@@ -33,8 +33,6 @@ const Page = () => {
 
   return (
     <div className='page'>
-      <h1>{data.title}</h1>
-
       {data.collections && (
         <ul className='page__collections'>
           {data.collections.map(collection => (
