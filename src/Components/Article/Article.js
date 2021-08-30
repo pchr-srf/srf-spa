@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import Spinner from '../Spinner/Spinner';
+import Image from '../Image/Image';
 import './Article.scss';
 
 const Article = () => {
@@ -32,10 +33,12 @@ const Article = () => {
     case 'paragraph':
       return <p>{element.children[0].text}</p>;
     case 'image':
-      return (<div>
-        <img src={`https://www.srf.ch/static/cms/images/1280w/${element.image.split(':').reverse()[0]}.jpg`} />
-        <p>{element.legend}</p>
-      </div>);
+      return <Image
+        urn={element.image}
+        legend={element.legend}
+        alt={element.alttext}
+        source={element.source}
+      />;
     default:
       break;
     }

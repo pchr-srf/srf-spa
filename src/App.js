@@ -13,9 +13,6 @@ import Article from './Components/Article/Article';
 const DEFAULT_PAGE_ID = 4267482;
 const PAGES = [
   {
-    title: 'Home',
-    id: 4267482
-  }, {
     title: 'News',
     id: 1646
   }, {
@@ -43,9 +40,11 @@ const App = () => {
   return (
     <div className="App">
       <Router>
-        <Header
-          pages={PAGES}
-        />
+        <div className='app__header'>
+          <Header
+            pages={PAGES}
+          />
+        </div>
         
         <div className='app__content'>
           <Switch>
