@@ -58,3 +58,19 @@
 .header__link--active {
     color: #ff6669;
 }
+
+.header__menu {
+    flex: 0 0 100%;
+}
+
+.header__menu-button-container {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.header__menu-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+}

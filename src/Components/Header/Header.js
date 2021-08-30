@@ -1,8 +1,11 @@
 import React from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import HamburgerButton from '../HamburgerButton/HamburgerButton';
 import './Header.scss';
 
 const Header = ({ pages = [] }) => {
+  const [open, setOpen] = useState(false);
 
   return (
     <div className='header'>
@@ -19,8 +22,22 @@ const Header = ({ pages = [] }) => {
               {page.title}
             </NavLink>
           </li>)}
+
+          <li className='header__menu-button-container'>
+            <HamburgerButton
+              onClick={() => setOpen(!open)}
+              active={open}
+            />
+          </li>
         </ul>
       </div>
+      {open && (
+        <div className='header__menu'>
+          <div className='header__menu-content'>
+            <p>hoi!</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
